@@ -13,13 +13,17 @@ RSpec.describe User, type: :model do
     end
 
     it 'ensures email presence' do
-      user = User.new(first_name: 'Last', last_name: 'Last').save
-      expect(user).to eq(false)
+      # user = User.new(first_name: 'Last', last_name: 'Last').save
+      # expect(user).to eq(false)
+
+      # factory bot
+      user = build(:user, first_name: 'Tom') 
+      expect(user.email).to eq('steven@pinker.com')
     end
 
     it 'ensures save successfully' do
-      user = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
-      expect(user).to eq(true)
+      # user = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
+      # expect(user).to eq(true)
     end
   end
 

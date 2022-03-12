@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @blog %>
-
-<div>
-  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
-  <%= link_to "Back to blogs", blogs_path %>
-
-  <%= button_to "Destroy this blog", @blog, method: :delete %>
-</div>
+<table class="table-auto">
+  <%= render @blog %>
+  <tr>
+    <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+      <%= link_to "Edit this blog", edit_blog_path(@blog) %>
+    </td>
+    <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+      <%= link_to "Back to blogs", blogs_path %>
+    </td>
+    <td class="py-4 px-3 text-sm whitespace-nowrap">
+      <%= button_to "Destroy this blog", @blog, method: :delete %>
+    </td>
+  <tr>
+<table>
