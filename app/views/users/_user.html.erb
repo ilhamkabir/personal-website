@@ -1,0 +1,17 @@
+<tr id="<%= dom_id user %>" class="hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= user.first_name %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= user.last_name %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= user.email %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= link_to "Show this user", user %>
+  </td>
+</tr>

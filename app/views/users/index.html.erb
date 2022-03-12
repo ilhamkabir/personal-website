@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <table class="table-auto">
+      <%= render user %>
+    <table>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>

@@ -64,3 +64,11 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'simplecov'
+end
+
+
+gem "tailwindcss-rails", "~> 2.0"

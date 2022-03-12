@@ -1,0 +1,21 @@
+<tr id="<%= dom_id blog %>" class="hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= blog.user_id %>
+  </td>
+  
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= blog.title %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= blog.subtitle %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= blog.body %>
+  </td>
+
+  <td class="py-4 px-3 text-sm font-medium whitespace-nowrap">
+    <%= link_to "Show this blog", blog %>
+  </td>
+</tr>
