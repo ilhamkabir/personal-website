@@ -1,8 +1,9 @@
 FactoryBot.define do
-  factory :user do
-    first_name { "Steven" }
-    last_name { "Pinker" }
-    email { "steven@pinker.com" }
+  factory :user, aliases: [:author, :commenter] do
+    first_name { 'John' }
+    last_name { 'Doe' }
+
+    sequence(:email) { |n| "#{last_name}-#{n}@example.com".downcase }
     created_at { 3.days.ago }
     updated_at { 1.day.ago }
     # blog # implicite 

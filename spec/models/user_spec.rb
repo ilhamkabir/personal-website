@@ -13,17 +13,21 @@ RSpec.describe User, type: :model do
     end
 
     it 'ensures email presence' do
-      # user = User.new(first_name: 'Last', last_name: 'Last').save
-      # expect(user).to eq(false)
+      user = User.new(first_name: 'Last', last_name: 'Last').save 
+      expect(user).to eq(false)
+    end
 
-      # factory bot
-      user = build(:user, first_name: 'Tom') 
-      expect(user.email).to eq('steven@pinker.com')
+    it 'ensures uniqueness of email' do
+      user_1 = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
+      expect(user_1).to eq(true)
+
+      user_2 = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
+      expect(user_2).to eq(false)
     end
 
     it 'ensures save successfully' do
-      # user = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
-      # expect(user).to eq(true)
+      user = User.new(first_name: 'First', last_name: 'Last', email: 'sample@exmaple.com').save
+      expect(user).to eq(true)
     end
   end
 
@@ -32,12 +36,18 @@ RSpec.describe User, type: :model do
     before(:each) do
       User.new().save
       User.new(params).save
-      User.new(params.merge(email: 'sample@exmaple.com')).save
-      User.new(params.merge(email: 'sample@exmaple.com')).save
+      User.new(params.merge(email: 'sample@unique1.com')).save
+      User.new(params.merge(email: 'sample@unique2.com')).save
     end
 
     it 'should return users' do
       expect(User.all.size).to eq(2)
+    end
+
+    it 'should create a user blog' do
+      create(:user) do |user|
+        user.blogs.create(attributes_for(:blog))
+      end
     end
 
   end
