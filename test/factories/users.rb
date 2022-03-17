@@ -6,13 +6,11 @@ FactoryBot.define do
     sequence(:email) { |n| "#{last_name}-#{n}@example.com".downcase }
     created_at { 3.days.ago }
     updated_at { 1.day.ago }
-    # blog # implicite 
-    # association :blog #explicit
+  end
+end
 
-    # trait :enlightenment_now do 
-    #   assocation :blog, factory :pinker_blog
-    # end
-
-    # factory :pinker_user, traits: [:enlightenment_now]
+def user_with_blogs(blogs_count: 5)
+  create(:user) do |user|
+    create_list(:blog, blogs_count, user: user)
   end
 end

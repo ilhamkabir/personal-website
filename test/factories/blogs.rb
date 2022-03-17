@@ -1,14 +1,15 @@
 FactoryBot.define do
   factory :blog do
-    title { "Homo Deus" }
-    subtitle { "A Brief History of Tomorrow" }
+    title { 'Homo Deus' }
+    subtitle { 'A Brief History of Tomorrow' }
     sequence(:body) { |n| "Body-#{n}" }
+    status { 'approved'}
     user # implicit association
     # association :user 
 
     # nested factories
     factory :approved_blog do
-      status { "approved" }
+      status { 'approved' }
     end
 
     trait :steven_pinker do

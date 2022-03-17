@@ -50,5 +50,10 @@ RSpec.describe User, type: :model do
       end
     end
 
+    it 'should create a user with blogs' do
+      user = create(:user)
+      expect(user_with_blogs.blogs.length).to eq(5)
+    end
+
   end
 end

@@ -20,6 +20,11 @@ RSpec.describe Blog, type: :model do
         ActiveRecord::RecordInvalid, "Validation failed: Body can't be blank"
       )
     end
+
+    it 'ensures blog is approved' do
+      blog = build(:approved_blog)
+      expect (blog.status).to eq('approved')
+    end
   end
 
   context 'scope tests' do
