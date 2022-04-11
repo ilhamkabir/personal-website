@@ -7,7 +7,10 @@
     </div>
     <!-- right side -->
     <div class="flex items-center space-x-3">
-        <%= link_to "Users", users_path, class: "block p-3" %>
-        <%= link_to "Login", 'auth/auth0', method: :post, class: "block p-3" %>
+        <% if user_signed_in? %>
+            <%= button_to 'Logout', 'auth/logout', method: :get, class: "block p-3" %>
+        <% else %>
+            <%= button_to 'Login', '/auth/auth0', method: :post, class: "block p-3" %>
+        <% end %>
     </div>
 </nav>

@@ -9,6 +9,8 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'dotenv-rails' # .env
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -40,7 +42,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'omniauth-auth0'
-gem 'omniauth-rails_csrf_protection' # help prevent forge authentication requests
+gem 'omniauth-rails_csrf_protection' # prevents forged authentication requests
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -56,7 +58,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'factory_bot_rails'
   gem "cypress-rails"
-  gem 'dotenv-rails' # .env
 end
 
 group :development do

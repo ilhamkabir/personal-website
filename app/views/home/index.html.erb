@@ -1,4 +1,7 @@
-<strong>Current user:</strong> <%= session[:user] %>
+<%= content_tag :div do %>
+  <p>Normalized User Profile:</p>
+  <%= JSON.pretty_generate(@user)%>
+<% end if user_signed_in? %>
 
 <%
 =begin%>
